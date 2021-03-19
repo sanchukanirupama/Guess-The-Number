@@ -1,4 +1,3 @@
-
 const path = require('path');
 const http = require('http');
 const express = require("express");
@@ -8,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-const PORT = 3000;
+const PORT = 3000 || process.env.PORT;
 var random = Math.floor(Math.random() * 100) + 1;
 const users = {};
 
