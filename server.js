@@ -7,9 +7,9 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-const PORT = 3000 || process.env.PORT;
+const PORT = process.env.PORT||3000;
 var random = Math.floor(Math.random() * 100) + 1;
-const users = {};
+const users = [];
 
 app.use(express.static(path.join(__dirname, 'public')));
 
