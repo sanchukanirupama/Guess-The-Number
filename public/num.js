@@ -22,7 +22,7 @@ function clik(event){
    event.preventDefault();
    var input = document.getElementById('Numinput').value;
    if(input ==""){
-      console.log("fuck off");
+      return;
    }else{
    socket.emit('client', input);
    document.getElementById("Numinput").innerHTML = " ";
@@ -30,7 +30,7 @@ function clik(event){
 }
 
 function ret(){
-   console.log("ok");
+   console.log("reset");
    socket.emit('client2', 'reset');
 }
 
@@ -48,7 +48,6 @@ function initgame(){
 }
 function guesshistory(guess){
    guesses.push(guess);
-   console.log(guesses);
    }
    
    function displayHistory(){
